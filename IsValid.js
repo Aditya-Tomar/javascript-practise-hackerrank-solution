@@ -1,45 +1,40 @@
 function isValid(s) {
     
-    let iterator_1 = 0;
-    let count_1 = 0, count_2 = 0;
-    let element_diff = 0;
-    let distinct_element = new Set();
-    let frequency_arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    let index1 = 0;
+    let count1 = 0, count2 = 0;
+    let elementDiff = 0;
+    let distinctElementSet = new Set();
+    let frequencyArr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     
     
     for( let char in s){
         //console.log(s[char], s[char].charCodeAt(0));
-        frequency_arr[s[char].charCodeAt(0) - 97]++;
+        frequencyArr[s[char].charCodeAt(0) - 97]++;
     }
-    
-    //console.log(frequency_arr);
-    
-    distinct_element = new Set(frequency_arr);
-    distinct_element.delete(0);
 
-    //console.log(distinct_element.size);
-    //console.log(distinct_element);
+    distinctElementSet = new Set(frequencyArr);
+    distinctElementSet.delete(0);
     
-    
-    if(distinct_element.size == 1){
+    if(distinctElementSet.size == 1){
         return "YES";
     }
-    else if( distinct_element.size > 2){
+    else if( distinctElementSet.size > 2){
         return "NO";
     }
     else{
-        for(let value of distinct_element){
-            count_1 = count_2;
-            count_2 = 0;
-            for( iterator_1 = 0; iterator_1 < 26; iterator_1++){
-                if(frequency_arr[iterator_1] == value)
-                    count_2++;
+        for(let value of distinctElementSet){
+            
+            count1 = count2;
+            count2 = 0;
+            for( index1 = 0; index1_ < 26; index1++){
+                if(frequencyArr[index1] == value)
+                    count2++;
             }
-            element_diff -= value;
-            element_diff = Math.abs(element_diff);
+            elementDiff -= value;
+            elementDiff = Math.abs(elementDiff);
         }
     
-        if(count_1 > 1 && count_2 == 1 || count_1 == 1 && count_2 > 1 && (element_diff == 1)){
+        if(count1 > 1 && count2 == 1 || count1 == 1 && count2 > 1 && (elementDiff == 1)){
             return "YES";
         }
         else{    

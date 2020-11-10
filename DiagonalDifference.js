@@ -1,27 +1,27 @@
 function diagonalDifference(arr) {
     // Write your code here
     
-    let iterator_1 = 0;
-    let iterator_2 = 0;
-    let diagonal_sum = 0;
+    let index1 = 0;
+    let index2 = 0;
+    let diagonalSum = 0;
     let difference = 0;
-    let sum_1 = 0, sum_2 = 0;
+    let sum1 = 0, sum2 = 0;
     
-    for(iterator_1 = 0; iterator_1 < arr[0].length; iterator_1++){
-        diagonal_sum += arr[iterator_1][iterator_1];
+    for(index1 = 0; index1 < arr[0].length; index1++){
+        diagonalSum += arr[index1][index1];
     }
     
-    sum_1 = diagonal_sum;
-    diagonal_sum = 0;
+    sum1 = diagonalSum;
+    diagonalSum = 0;
     
-    for(iterator_1 = arr[0].length-1; iterator_1 >= 0; iterator_1--){
-        diagonal_sum += arr[iterator_2][iterator_1];
-        iterator_2++;
+    for(index1 = arr[0].length-1; index1 >= 0; index1--){
+        diagonalSum += arr[index2][index1];
+        index2++;
     }
     
-    sum_2 = diagonal_sum;
+    sum2 = diagonalSum;
     
-    difference = Math.abs(sum_1 - sum_2);
+    difference = Math.abs(sum1 - sum2);
     
     return difference;
 }

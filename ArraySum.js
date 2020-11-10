@@ -1,11 +1,11 @@
 function simpleArraySum(ar) {
     
-    let iterator=0;
-    let total_sum = 0;
+    let index = 0;
+    let totalSum = 0;
     
-    for(iterator = 0; iterator < ar.length; iterator++ ){
-        total_sum += ar[iterator];
+    for(index = 0; index < ar.length; index++ ){
+        totalSum += ar[index];
     }
     
-return total_sum;
+return totalSum;
 }

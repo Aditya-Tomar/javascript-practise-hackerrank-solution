@@ -1,9 +1,9 @@
 function climbingLeaderboard(scores, alice) {
 
-    let ranks_index;
-    let alice_index = 0;
-    let iterator = 0;
-    let last_index=0;
+    let ranksIndex;
+    let aliceIndex = 0;
+    let index = 0;
+    let lastIndex=0;
     
     let ranks = [];
     let results = [];
@@ -11,38 +11,41 @@ function climbingLeaderboard(scores, alice) {
     
     ranks.push(scores[0]);
     
-    for( iterator = 1; iterator < scores.length; iterator += 1){
-        if( ranks[last_index] != scores[iterator] ){
-            ranks.push( scores[iterator] );
-            last_index+=1;
+    for( index = 1; index < scores.length; index += 1){
+        if( ranks[lastIndex] != scores[index] ){
+            ranks.push( scores[index] );
+            lastIndex+=1;
         }    
     }
     
-    ranks_index = ranks.length-1;
+    ranksIndex = ranks.length-1;
     
-    for(alice_index = 0; alice_index < alice.length ; alice_index += 1){
+    for(aliceIndex = 0; aliceIndex < alice.length ; aliceIndex += 1){
         
-        if( alice[alice_index] == ranks[ranks_index]){
-            results.push(ranks_index+1);
-            ranks_index--;
-            
-            if(ranks_index < 0)
-                ranks_index = 0;
+        if( ranksIndex < 0 ){
+            ranksIndex = 0;
         }
-        else if( alice[alice_index] < ranks[ranks_index]){
-            results.push(ranks_index+2);
+        
+        if( alice[aliceIndex] == ranks[ranksIndex]){
+            results.push(ranksIndex+1);
+            ranksIndex--;
+        }
+        else if( alice[aliceIndex] < ranks[ranksIndex]){
+            results.push(ranksIndex+2);
         }
         else{
             
-            if(ranks_index < 0)
-                ranks_index = 0;
-                
-            if(alice[alice_index] > ranks[ranks_index] && ranks_index != 0){
-                alice_index-=1;
-                ranks_index-=1;
+            if(alice[aliceIndex] > ranks[ranksIndex] && ranksIndex != 0){
+                aliceIndex-=1;
+                if( ranksIndex < 0 ){
+                    ranksIndex = 0;
+                }
+                else{
+                    ranksIndex-=1;
+                }
             }
-            
-            if( alice[alice_index] > ranks[ranks_index] && ranks_index == 0 ){
+                
+            if( alice[aliceIndex] > ranks[ranksIndex] && ranksIndex == 0 ){
                 results.push(1);
             }
         }

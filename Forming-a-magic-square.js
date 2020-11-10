@@ -13,32 +13,32 @@ function formingMagicSquare(s) {
             [[2, 7, 6], [9, 5, 1], [4, 3, 8]],
             ];
 
-    let iterator_row = 0;
-    let iterator_column = 0;
-    let iterator_arr = 0;
-    let min_cost = 10000000000;
-    let temp_arr = [];
-    let cost=0;
+    let rowIndex = 0;
+    let columnIndex = 0;
+    let arrayIndex = 0;
+    let minCost = 10000000000;
+    let tempArray = [];
+    let cost = 0;
     
-    for(iterator_arr = 0; iterator_arr < arr.length; iterator_arr += 1){
+    for(arrayIndex = 0; arrayIndex < arr.length; arrayIndex += 1){
     
-    temp_arr = arr[iterator_arr];
+    tempArray = arr[arrayIndex];
     cost=0;
   
-        for(iterator_row = 0; iterator_row < s.length; iterator_row += 1){
+        for(rowIndex = 0; rowIndex < s.length; rowIndex += 1){
             
-            for(iterator_column = 0; iterator_column < s.length; iterator_column += 1 ){
-                    if(temp_arr[iterator_row][iterator_column] > s[iterator_row][iterator_column]){
-                        cost += temp_arr[iterator_row][iterator_column] - s[iterator_row][iterator_column];
+            for(columnIndex = 0; columnIndex < s.length; columnIndex += 1 ){
+                    if(tempArray[rowIndex][columnIndex] > s[rowIndex][columnIndex]){
+                        cost += tempArray[rowIndex][columnIndex] - s[rowIndex][columnIndex];
                     }
                     else{
-                        cost += s[iterator_row][iterator_column] - temp_arr[iterator_row][iterator_column];
+                        cost += s[rowIndex][columnIndex] - tempArray[rowIndex][columnIndex];
                     }  
             }
         }
-        if(min_cost > cost)
-            min_cost = cost;
+        if(minCost > cost)
+            minCost = cost;
     }
     
-return min_cost;
+return minCost;
 }
