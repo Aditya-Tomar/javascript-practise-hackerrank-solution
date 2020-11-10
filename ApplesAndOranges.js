@@ -1,25 +1,23 @@
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
 
-    let iterator = 0;
-    let apple_counter = 0;
-    let orange_counter = 0;
-    let start_position = s;
-    let end_position = t;
+    let index = 0;
+    let appleCounter = 0;
+    let orangeCounter = 0;
+    let startPosition = s;
+    let endPosition = t;
     
-    for(iterator = 0; iterator < apples.length; iterator++){
-        if( apples[iterator] >= 0){
-            if( a + apples[iterator] >= start_position && a + apples[iterator] <= end_position)
-                apple_counter++;
+    for(index = 0; index < apples.length; index++){
+        if( apples[index] >= 0 && a + apples[index] >= startPosition && a + apples[index] <= endPosition ){
+            appleCounter++;
         }
     }
     
-    for(iterator = 0; iterator < oranges.length; iterator++){
-        if( oranges[iterator] < 0 ){
-            if(b + oranges[iterator] <= end_position && b + oranges[iterator] >= start_position)
-                orange_counter++;
+    for(index = 0; index < oranges.length; index++){
+        if( oranges[index] < 0 && b + oranges[index] <= endPosition && b + oranges[index] >= startPosition ){
+            orangeCounter++;
         }
     }
     
-    console.log(apple_counter);
-    console.log(orange_counter);
+    console.log(appleCounter);
+    console.log(orangeCounter);
 }
