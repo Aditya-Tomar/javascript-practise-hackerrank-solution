@@ -13,21 +13,18 @@ function formingMagicSquare(s) {
             [[2, 7, 6], [9, 5, 1], [4, 3, 8]],
             ];
 
-    let rowIndex = 0;
-    let columnIndex = 0;
-    let arrayIndex = 0;
     let minCost = 10000000000;
     let tempArray = [];
     let cost = 0;
     
-    for(arrayIndex = 0; arrayIndex < arr.length; arrayIndex += 1){
+    for(let arrayIndex = 0; arrayIndex < arr.length; arrayIndex += 1){
     
-    tempArray = arr[arrayIndex];
-    cost=0;
+        tempArray = arr[arrayIndex];
+        cost=0;
   
-        for(rowIndex = 0; rowIndex < s.length; rowIndex += 1){
+        for(let rowIndex = 0; rowIndex < s.length; rowIndex += 1){
             
-            for(columnIndex = 0; columnIndex < s.length; columnIndex += 1 ){
+            for(let columnIndex = 0; columnIndex < s.length; columnIndex += 1 ){
                     if(tempArray[rowIndex][columnIndex] > s[rowIndex][columnIndex]){
                         cost += tempArray[rowIndex][columnIndex] - s[rowIndex][columnIndex];
                     }

@@ -1,11 +1,10 @@
 function biggerIsGreater(w) {
 
-    let index = 0;
     let descendingOrderFlag = 1, assendingOrderFlag = 1;
     let outputString = '';
     
     
-    for(index = 0; index < w.length-1; index++){
+    for(let index = 0; index < w.length-1; index++){
         if(!(w[index] >= w[index+1])){
             descendingOrderFlag = 0;
         }
@@ -14,7 +13,6 @@ function biggerIsGreater(w) {
             assendingOrderFlag = 0;
         }
     }
-    
     
     if(descendingOrderFlag == 1){
         outputString = "no answer";

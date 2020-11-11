@@ -2,7 +2,6 @@ function climbingLeaderboard(scores, alice) {
 
     let ranksIndex;
     let aliceIndex = 0;
-    let index = 0;
     let lastIndex=0;
     
     let ranks = [];
@@ -11,7 +10,7 @@ function climbingLeaderboard(scores, alice) {
     
     ranks.push(scores[0]);
     
-    for( index = 1; index < scores.length; index += 1){
+    for( let index = 1; index < scores.length; index += 1){
         if( ranks[lastIndex] != scores[index] ){
             ranks.push( scores[index] );
             lastIndex+=1;

@@ -1,6 +1,5 @@
 function isValid(s) {
-    
-    let index1 = 0;
+
     let count1 = 0, count2 = 0;
     let elementDiff = 0;
     let distinctElementSet = new Set();
@@ -26,7 +25,7 @@ function isValid(s) {
             
             count1 = count2;
             count2 = 0;
-            for( index1 = 0; index1_ < 26; index1++){
+            for(let index1 = 0; index1_ < 26; index1++){
                 if(frequencyArr[index1] == value)
                     count2++;
             }
