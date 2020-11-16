@@ -1,7 +1,6 @@
 function diagonalDifference(arr) {
     // Write your code here
     
-    
     let diagonalSum = 0;
     let difference = 0;
     let sum1 = 0, sum2 = 0;

@@ -11,7 +11,7 @@ function climbingLeaderboard(scores, alice) {
     ranks.push(scores[0]);
     
     for( let index = 1; index < scores.length; index += 1){
-        if( ranks[lastIndex] != scores[index] ){
+        if( ranks[lastIndex] !== scores[index] ){
             ranks.push( scores[index] );
             lastIndex+=1;
         }    
@@ -25,7 +25,7 @@ function climbingLeaderboard(scores, alice) {
             ranksIndex = 0;
         }
         
-        if( alice[aliceIndex] == ranks[ranksIndex]){
+        if( alice[aliceIndex] === ranks[ranksIndex]){
             results.push(ranksIndex+1);
             ranksIndex--;
         }
@@ -34,17 +34,14 @@ function climbingLeaderboard(scores, alice) {
         }
         else{
             
-            if(alice[aliceIndex] > ranks[ranksIndex] && ranksIndex != 0){
+            if(alice[aliceIndex] > ranks[ranksIndex] && ranksIndex !== 0){
                 aliceIndex-=1;
-                if( ranksIndex < 0 ){
-                    ranksIndex = 0;
-                }
-                else{
-                    ranksIndex-=1;
-                }
+                
+                rankIndex = (ranksIndex < 0) ? 0 : randIndex-1;
+                   
             }
                 
-            if( alice[aliceIndex] > ranks[ranksIndex] && ranksIndex == 0 ){
+            if( alice[aliceIndex] > ranks[ranksIndex] && ranksIndex === 0 ){
                 results.push(1);
             }
         }

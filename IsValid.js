@@ -3,7 +3,7 @@ function isValid(s) {
     let count1 = 0, count2 = 0;
     let elementDiff = 0;
     let distinctElementSet = new Set();
-    let frequencyArr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    let frequencyArr = new Array(26).fill(0,0,frequencyArr.length);
     
     
     for( let char in s){
@@ -14,7 +14,7 @@ function isValid(s) {
     distinctElementSet = new Set(frequencyArr);
     distinctElementSet.delete(0);
     
-    if(distinctElementSet.size == 1){
+    if(distinctElementSet.size === 1){
         return "YES";
     }
     else if( distinctElementSet.size > 2){
@@ -25,15 +25,15 @@ function isValid(s) {
             
             count1 = count2;
             count2 = 0;
-            for(let index1 = 0; index1_ < 26; index1++){
-                if(frequencyArr[index1] == value)
+            for(let index1 = 0; index1 < 26; index1++){
+                if(frequencyArr[index1] === value)
                     count2++;
             }
             elementDiff -= value;
             elementDiff = Math.abs(elementDiff);
         }
     
-        if(count1 > 1 && count2 == 1 || count1 == 1 && count2 > 1 && (elementDiff == 1)){
+        if(count1 > 1 && count2 === 1 || count1 === 1 && count2 > 1 && (elementDiff === 1)){
             return "YES";
         }
         else{    

@@ -14,10 +14,10 @@ function biggerIsGreater(w) {
         }
     }
     
-    if(descendingOrderFlag == 1){
+    if(descendingOrderFlag === 1){
         outputString = "no answer";
     }
-    else if (descendingOrderFlag == 1 && assendingOrderFlag != 0){
+    else if (descendingOrderFlag === 1 && assendingOrderFlag !== 0){
         outputString = w;
         outputString[w.length-2] = w[w.length-1];
         outputString[w.length-1] = w[w.length-2];

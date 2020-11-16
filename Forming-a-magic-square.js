@@ -33,8 +33,7 @@ function formingMagicSquare(s) {
                     }  
             }
         }
-        if(minCost > cost)
-            minCost = cost;
+        minCost = minCost > cost ? minCost : cost;
     }
     
 return minCost;

@@ -9,7 +9,7 @@ function divisibleSumPairs(n, k, ar) {
             sum = 0;
             sum += (ar[index1] + ar[index2]);
             
-            if(sum % k == 0){
+            if(sum % k === 0){
                pairs++;
             }
         } 

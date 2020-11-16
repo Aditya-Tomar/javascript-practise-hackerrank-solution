@@ -6,7 +6,7 @@ function encryption(s) {
     let encryptedString = '';
     
     for(let index1 = 0; index1 < s.length; index1++){
-        if(s[index1] != ' '){
+        if(s[index1] !== ' '){
             stringLength++;
             copyString += s[index1];
         }   
@@ -14,12 +14,7 @@ function encryption(s) {
     
     row = Math.floor(Math.sqrt(stringLength));
     
-    if( row != Math.sqrt(stringLength) ){
-        column = row + 1;
-    }
-        else{
-        column = row;
-    }
+    column =  row != Math.sqrt(stringLength) ? row + 1 : row;
     
     while( column * row < stringLength){
         row++;
