@@ -25,7 +25,7 @@ class Player {
         this.sign = sign;
     }
 
-    checkWin( board ){
+    checkWin = ( board ) => {
 
         for(let index = 0; index < 3; index++){
             if( board[index][0] == board[index][1] && board[index][1] == board[index][2] && board[index][0] == this.sign ){
@@ -48,13 +48,12 @@ class Player {
         return false;
     }
 
-    checkPosition( board, position ){
+    checkPosition = ( board, position ) => {
          
         return board[ Math.floor(position/3) ][ position%3 ] == ' ' ? true : false;
     }
 
-    playerMove( board, remmainingChance ){
-
+    playerMove = ( board, remmainingChance ) => {
 
         while(remmainingChance > 0 ){
             let position = prompt(`${ this.name } turn`, '');
